@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import firebase from './lib/firebase'
-import './App.css'
 
 class App extends Component {
   constructor (props) {
