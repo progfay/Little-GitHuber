@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import firebase from './lib/firebase'
-import LoginButton from './components/LoginButton'
-import LogoutButton from './components/LogoutButton'
+import firebase from '../lib/firebase'
+import LoginButton from './LoginButton'
+import LogoutButton from './LogoutButton'
 
 const App = () => {
   const [ user, setUser ] = useState(null)
@@ -10,10 +10,10 @@ const App = () => {
     return unsubscribe
   })
   return (
-    <>
+    <React.Fragment>
       <p> UID: {user && user.uid} </p>
       { user ? <LogoutButton /> : <LoginButton /> }
-    </>
+    </React.Fragment>
   )
 }
 
