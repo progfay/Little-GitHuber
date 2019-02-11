@@ -1,5 +1,28 @@
+// import React, { useState, useEffect } from 'react'
+// import firebase from './lib/firebase'
+// import LoginButton from './components/LoginButton'
+// import LogoutButton from './components/LogoutButton'
+
+// const App = () => {
+//   const [ user, setUser ] = useState(null)
+//   useEffect(() => {
+//     const unsubscribe = firebase.auth().onAuthStateChanged(setUser)
+//     return unsubscribe
+//   })
+//   return (
+//     <>
+//       <p> UID: {user && user.uid} </p>
+//       { user ? <LogoutButton /> : <LoginButton /> }
+//     </>
+//   )
+// }
+
+// export default App
+
 import React, { Component } from 'react'
 import firebase from './lib/firebase'
+import LoginButton from './components/LoginButton'
+import LogoutButton from './components/LogoutButton'
 
 class App extends Component {
   constructor (props) {
@@ -13,15 +36,6 @@ class App extends Component {
     })
   }
 
-  login () {
-    const provider = new firebase.auth.GithubAuthProvider()
-    firebase.auth().signInWithRedirect(provider)
-  }
-
-  logout () {
-    firebase.auth().signOut()
-  }
-
   render () {
     return (
       <div className='App'>
@@ -30,9 +44,9 @@ class App extends Component {
         </p>
 
         {this.state.user ? (
-          <button onClick={this.logout}>GitHub Logout</button>
+          <LogoutButton />
         ) : (
-          <button onClick={this.login}>GitHub Login</button>
+          <LoginButton />
         )}
       </div>
     )
