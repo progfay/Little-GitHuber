@@ -6,6 +6,7 @@
     "@primer/components": "^9.0.0-beta",
     "express": "^4.16.4",
     "firebase": "^5.8.2",
+    "firebase-admin": "^7.0.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"
   },
