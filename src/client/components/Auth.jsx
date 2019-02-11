@@ -3,7 +3,7 @@ import firebase from '../lib/firebase'
 import LoginButton from './LoginButton'
 import LogoutButton from './LogoutButton'
 
-const App = () => {
+const Auth = () => {
   const [ user, setUser ] = useState(null)
   useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged(setUser)
@@ -17,4 +17,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Auth
