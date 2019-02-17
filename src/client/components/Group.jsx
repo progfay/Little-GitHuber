@@ -3,7 +3,7 @@ import { withCookies } from 'react-cookie'
 import { Flex, BorderBox, BranchName, Box } from '@primer/components'
 import Member from '../components/Member'
 
-const Icons = ({ members }) => (
+const Members = ({ members }) => (
   <Box width={241} bg={'gray.1'}>
     <Flex alignItems={'center'} justifyContent={'start'} flexWrap={'wrap'} style={{ 'border-right': 'solid 1px #e1e4e8' }}>
       {members.map(user => (
@@ -23,13 +23,13 @@ const Branch = ({ branchName }) => (
   </Flex>
 )
 
-const Members = ({ members, branchName }) => {
+const Group = ({ members, branchName }) => {
   return (
     <BorderBox width={'80vw'} maxWidth={980} minWidth={490} borderRadius={0}>
       <Flex alignItems={'center'} justifyContent={'start'} flexWrap={'wrap'}>
 
         <Flex.Item>
-          <Icons members={members} />
+          <Members members={members} />
         </Flex.Item>
 
         <Flex.Item>
@@ -41,4 +41,4 @@ const Members = ({ members, branchName }) => {
   )
 }
 
-export default withCookies(Members)
+export default withCookies(Group)
