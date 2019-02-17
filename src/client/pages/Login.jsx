@@ -6,7 +6,7 @@ const Login = ({ history, cookies }) => {
   useEffect(() => {
     if (cookies.get('uid')) {
       history.replace('/')
-      return null
+      return
     }
 
     const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
@@ -16,7 +16,7 @@ const Login = ({ history, cookies }) => {
       }
     })
     const provider = new firebase.auth.GithubAuthProvider()
-    firebase.auth().signInWithRedirect(provider)
+    firebase.auth().signInWithPopup(provider)
 
     return unsubscribe
   })
