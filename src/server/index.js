@@ -5,7 +5,7 @@ const app = express()
 app.use(express.static('dist'))
 
 const generateDummyUser = require('./generateDummyUser')
-const users = new Array(20).fill(0).map(_ => generateDummyUser())
+const users = new Array(18).fill(0).map(_ => generateDummyUser())
 users.push({
   uid: 'YdGBZDOyZ6aX7cYxGDHnCxhY7Q72',
   displayName: 'progfay',
@@ -29,6 +29,20 @@ app.get('/user', (req, res) => {
 
 app.get('/users', (req, res) => {
   res.send(users)
+})
+
+const groupNum = Math.ceil(users.length / 3.0)
+const groupList = new Array(groupNum)
+  .fill(0)
+  .map((_, i) => (
+    [
+      users[i + groupNum * 0],
+      users[i + groupNum * 1],
+      users[i + groupNum * 2]
+    ].filter(user => user)
+  ))
+app.get('/group-list', (req, res) => {
+  res.send(groupList)
 })
 
 app.get('/*', (req, res) => {
