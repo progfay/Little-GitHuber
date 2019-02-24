@@ -19,6 +19,10 @@ module.exports = async (env, argv) => {
           test: /\.jsx$/,
           exclude: /node_modules/,
           loader: 'babel-loader'
+        },
+        {
+          test: /.mdx?$/,
+          use: ['babel-loader', '@mdx-js/loader']
         }
       ]
     },
