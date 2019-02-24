@@ -7,6 +7,7 @@ import Container from './components/style/Container'
 import Login from './pages/Login'
 import Logout from './pages/Logout'
 import GroupList from './pages/GroupList'
+import Setup from './pages/Setup'
 
 const App = ({ history }) => (
   <CookiesProvider>
@@ -17,6 +18,7 @@ const App = ({ history }) => (
           <Route exact path='/' component={GroupList} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/logout' component={Logout} />
+          <Route exact path='/setup' component={Setup} />
         </Switch>
       </Router>
     </Container>
