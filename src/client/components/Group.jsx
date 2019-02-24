@@ -25,7 +25,7 @@ const Branch = ({ branchName }) => (
 
 const Group = ({ members, branchName }) => {
   return (
-    <BorderBox width={'80vw'} maxWidth={980} minWidth={490} borderRadius={0}>
+    <BorderBox width={'100%'} borderRadius={0}>
       <Flex alignItems={'center'} justifyContent={'start'} flexWrap={'wrap'}>
 
         <Flex.Item>

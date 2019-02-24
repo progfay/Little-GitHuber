@@ -19,7 +19,7 @@ const Members = () => {
   return (
     <Flex m={5} alignItems={'center'} justifyContent={'space-evenly'} flexWrap={'wrap'} flexDirection={'column'}>
       {groupList.map((members, index) => (
-        <Flex.Item key={index}>
+        <Flex.Item key={index} style={{ width: '100%' }}>
           <Group members={members} branchName={'refactor-hogefuga'} />
         </Flex.Item>
       ))}
