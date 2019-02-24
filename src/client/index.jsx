@@ -7,7 +7,8 @@ import Container from './components/style/Container'
 import Login from './pages/Login'
 import Logout from './pages/Logout'
 import GroupList from './pages/GroupList'
-import Setup from './pages/Setup'
+import Setup from './pages/Setup.mdx'
+import withPrimerMDX from './lib/withPrimerMDX'
 
 const App = ({ history }) => (
   <CookiesProvider>
@@ -18,7 +19,7 @@ const App = ({ history }) => (
           <Route exact path='/' component={GroupList} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/logout' component={Logout} />
-          <Route exact path='/setup' component={Setup} />
+          <Route exact path='/setup' component={withPrimerMDX(Setup)} />
         </Switch>
       </Router>
     </Container>

@@ -1,0 +1,55 @@
+# Heading1
+## Heading2
+### Heading3
+#### Heading4
+##### Heading5
+###### Heading6
+
+***
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+1. Ordered List
+  1. Ordered List
+  2. Ordered List
+2. Ordered List
+  - Unordered List
+3. Ordered List
+
+- Unordered List
+  - Unordered List
+- Unordered List
+  - Unordered List
+- Unordered List
+
+| hoge | fuga | piyo |
+|------|------|------|
+| hoge | fuga | piyo |
+| hoge | fuga | piyo |
+| hoge | fuga | piyo |
+
+```js
+window.addEventListener('load', function() {
+  var io = new IntersectionObserver(
+      function(entries) {
+        for (const entry of entries){
+            if(entry.intersectionRatio == 0) continue
+            entry.target.src = entry.target.dataset.origsrc
+            this.unobserve(entry.target)
+        }
+      }
+  )
+  var imgs = document.querySelectorAll('img')
+  for(const img of imgs) {
+    if(!img.dataset.origsrc) continue
+    io.observe(img)
+  }
+})
+```
+
+`Code` _Emphasis_ *Strong* ~~Delete~~
+
+---
+
+[progfay](https://github.com/progfay)
+![icon](https://gyazo.com/4ac7810705ef9c50a56d04f41a39b065.png)
